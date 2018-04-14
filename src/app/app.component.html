@@ -1,22 +1,58 @@
-<!-- Allows the user to manually trigger "Allow Notifications" request -->
-<div class="app-wrapper" *ngIf="!readyToSend">
+<div class="main-page">
+
   <h1>
-    Subscribe to Notifications
+    Welcome back, Norman
   </h1>
 
-  <div class="btn-wrapper">
-    <button type="button" class="cta-btn" (click)="subscribeToNotifications()">Subscribe</button>
-  </div>
+  <h2>
+    Today, you have {{ numberOfCases }} live applications
+  </h2>
 
-  <pre class="response-text" [ngClass]="{ 'error': hasSubscriptionErrors, 'success': !hasSubscriptionErrors }">{{subscriptionStatus | json}}</pre>
+  <div class="cases">
+    <div class="case-wrapper">
+      <div class="case ready-case">
+        Ready to go
+      </div>
+      <div class="case-number ready-case">
+        {{ readyCases }}
+      </div>
+    </div>
+
+    <div class="case-wrapper">
+      <div class="case require-action-case">
+        Require action
+      </div>
+      <div class="case-number require-action-case">
+        {{ requireActionCases }}
+      </div>
+    </div>
+
+    <div class="case-wrapper">
+      <div class="case in-progress-case">
+        In progress
+      </div>
+      <div class="case-number in-progress-case">
+        {{ inProgressCases }}
+      </div>
+    </div>
+
+    <div class="case-wrapper">
+      <div class="case no-action-case">
+        Need no action
+      </div>
+      <div class="case-number no-action-case">
+        {{ noActionCases }}
+      </div>
+    </div>
+  </div>
 </div>
 
-<!-- Allows the user to send notifications to the server to be web-pushed back to the app -->
-<div class="app-wrapper" *ngIf="!hasSubscriptionErrors && readyToSend">
-  <h1>
-    Trigger Notification
-  </h1>
+<div class="debug">
+  <pre class="response-text" [ngClass]="{ 'error': hasSubscriptionErrors, 'success': !hasSubscriptionErrors }">Client ID: {{ clientIdentifier }}</pre>
+  <pre class="response-text" [ngClass]="{ 'error': hasSubscriptionErrors, 'success': !hasSubscriptionErrors }">Application Status: {{ subscriptionStatus | json }}</pre>
+</div>
 
+<div class="debug">
   <label class="form-label" for="messageText">Notification Title: </label>
   <textarea class="form-item" rows="5"  id="messageTitle" name="messageTitle" [(ngModel)]="notificationTitle"></textarea>
 
@@ -24,10 +60,7 @@
   <textarea class="form-item" rows="5"  id="messageText" name="messageText" [(ngModel)]="notificationText"></textarea>
 
   <div class="btn-wrapper">
-    <button type="button" class="cta-btn" (click)="sendNotification()">Send notification</button>
-    <p class="client-id">(Client ID: {{clientIdentifier}})</p>
+    <button type="button" [disabled]="!readyToSend" class="cta-btn" (click)="sendNotification()">Send notification</button>
   </div>
-
-  <pre class="response-text" [ngClass]="{ 'error': hasNotificationErrors, 'success': !hasNotificationErrors }">{{notificationStatus | json}}</pre>
 </div>
 

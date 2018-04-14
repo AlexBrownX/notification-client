@@ -1,40 +1,76 @@
-.app-wrapper {
+.debug,
+.main-page {
   font-family: Arial, sans-serif;
-  text-align: center;
-  margin: 20px auto;
-  width: 100%;
-  max-width: 450px;
-  border: 1px solid gray;
-  padding: 5px;
+  background-color: #F9F9F9;
+  padding: 10px;
+  margin: 10px;
 
-  .form-label {
-    display: block;
+  h1,
+  h2 {
+    color: rgb(90, 90, 90);
+    text-align: center;
   }
 
-  .form-item {
-    margin: 20px 0;
-    width: 80%;
-    padding: 5px;
+  h1 {
+    font-size: 18px;
   }
 
-  .btn-wrapper {
-    padding: 20px;
+  h2 {
+    font-size: 20px;
+  }
 
-    .cta-btn {
+  .cases {
+    margin: 10px auto;
+    text-align: center;
+    padding: 0;
+
+    .case-wrapper {
+      color: #FFF;
       padding: 10px;
-      margin: 0;
-      background: none;
-      border: 1px solid black;
-    }
 
-    .client-id {
-      font-size: 0.875em;
+      .case,
+      .case-number {
+        display: inline-block;
+        height: 30px;
+        line-height: 30px;
+        padding: 10px;
+        -webkit-box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+        -moz-box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+        box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+      }
+
+      .case {
+        width: 150px;
+      }
+
+      .case-number {
+        margin-left: 20px;
+        width: 30px;
+      }
+
+      .ready-case {
+        background-color: #18A958;
+      }
+
+      .require-action-case {
+        background-color: #EC262D;
+      }
+
+      .in-progress-case {
+        background-color: #FD9026;
+      }
+
+      .no-action-case {
+        background-color: #189ACA;
+      }
     }
   }
+}
 
+.debug {
   .response-text {
     text-align: left;
-    padding: 20px;
+    padding: 10px;
     white-space: pre-wrap;
 
     &.success {
@@ -43,6 +79,33 @@
 
     &.error {
       color: red;
+    }
+  }
+
+  .form-label {
+    display: block;
+    padding: 10px 10px 0 10px;
+  }
+
+  .form-item {
+    margin: 10px;
+    width: 90%;
+    padding: 5px;
+    border: 1px solid black;
+  }
+
+  .btn-wrapper {
+    padding: 10px;
+
+    .cta-btn {
+      padding: 10px;
+      margin: 0;
+      background: #FFF;
+      border: 1px solid black;
+    }
+
+    .client-id {
+      font-size: 0.875em;
     }
   }
 }
