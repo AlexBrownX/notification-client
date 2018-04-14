@@ -53,6 +53,9 @@
 </div>
 
 <div class="debug">
+  <label class="form-label" for="messageText">Target Client ID: </label>
+  <input type="number" class="form-item" id="clientId" name="clientId" [(ngModel)]="clientIdentifier">
+
   <label class="form-label" for="messageText">Notification Title: </label>
   <textarea class="form-item" rows="5"  id="messageTitle" name="messageTitle" [(ngModel)]="notificationTitle"></textarea>
 
