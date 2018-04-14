@@ -1,5 +1,4 @@
 {
-  "gcm_sender_id": "810512710786",
   "name": "L&G Notification Example",
   "short_name": "Notifications",
   "description": "Subscribes to browser web push notifications",
