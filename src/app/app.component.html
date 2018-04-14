@@ -1,0 +1,33 @@
+<!-- Allows the user to manually trigger "Allow Notifications" request -->
+<div class="app-wrapper" *ngIf="!readyToSend">
+  <h1>
+    Subscribe to Notifications
+  </h1>
+
+  <div class="btn-wrapper">
+    <button type="button" class="cta-btn" (click)="subscribeToNotifications()">Subscribe</button>
+  </div>
+
+  <pre class="response-text" [ngClass]="{ 'error': hasSubscriptionErrors, 'success': !hasSubscriptionErrors }">{{subscriptionStatus | json}}</pre>
+</div>
+
+<!-- Allows the user to send notifications to the server to be web-pushed back to the app -->
+<div class="app-wrapper" *ngIf="!hasSubscriptionErrors && readyToSend">
+  <h1>
+    Trigger Notification
+  </h1>
+
+  <label class="form-label" for="messageText">Notification Title: </label>
+  <textarea class="form-item" rows="5"  id="messageTitle" name="messageTitle" [(ngModel)]="notificationTitle"></textarea>
+
+  <label class="form-label" for="messageText">Notification Text: </label>
+  <textarea class="form-item" rows="5"  id="messageText" name="messageText" [(ngModel)]="notificationText"></textarea>
+
+  <div class="btn-wrapper">
+    <button type="button" class="cta-btn" (click)="sendNotification()">Send notification</button>
+    <p class="client-id">(Client ID: {{clientIdentifier}})</p>
+  </div>
+
+  <pre class="response-text" [ngClass]="{ 'error': hasNotificationErrors, 'success': !hasNotificationErrors }">{{notificationStatus | json}}</pre>
+</div>
+

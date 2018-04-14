@@ -1,0 +1,19 @@
+{
+  "gcm_sender_id": "810512710786",
+  "name": "L&G Notification Example",
+  "short_name": "Notifications",
+  "description": "Subscribes to browser web push notifications",
+  "icons": [{
+    "src": "./assets/splash-logo-192.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }, {
+    "src": "./assets/splash-logo-512.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }],
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#005775"
+}

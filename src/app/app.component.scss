@@ -1,0 +1,48 @@
+.app-wrapper {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 450px;
+  border: 1px solid gray;
+  padding: 5px;
+
+  .form-label {
+    display: block;
+  }
+
+  .form-item {
+    margin: 20px 0;
+    width: 80%;
+    padding: 5px;
+  }
+
+  .btn-wrapper {
+    padding: 20px;
+
+    .cta-btn {
+      padding: 10px;
+      margin: 0;
+      background: none;
+      border: 1px solid black;
+    }
+
+    .client-id {
+      font-size: 0.875em;
+    }
+  }
+
+  .response-text {
+    text-align: left;
+    padding: 20px;
+    white-space: pre-wrap;
+
+    &.success {
+      color: green;
+    }
+
+    &.error {
+      color: red;
+    }
+  }
+}
