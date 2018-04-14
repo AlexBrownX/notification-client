@@ -18,8 +18,8 @@ export class AppComponent implements OnInit {
   inProgressCases = 1;
   noActionCases = 0;
 
-  notificationText = 'This text will appear inside the notification';
-  notificationTitle = 'Notification title';
+  notificationTitle = 'Case Requires Action';
+  notificationText = 'A new document has been uploaded for case 122';
 
   // Provide UI updates about what's happening (usually JSON objects)
   notificationStatus: Object;
